@@ -1,0 +1,2144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!doctype html>
+<!-- Khai báo tài liệu XML theo chuẩn UTF-8. --><!-- Khai báo tài liệu HTML5 tương thích với hệ thống Blogger. -->
+<html
+  b:version="2"
+  class="v2"
+  expr:dir="data:blog.languageDirection"
+  expr:lang="data:blog.locale"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:b="http://www.google.com/2005/gml/b"
+  xmlns:data="http://www.google.com/2005/gml/data"
+  xmlns:expr="http://www.google.com/2005/gml/expr"
+>
+  <!-- Khai báo phần tử HTML gốc và toàn bộ namespace mà Blogger XML yêu cầu. -->
+
+  <head>
+    <!-- Bắt đầu phần đầu tài liệu HTML. -->
+
+    <meta charset="UTF-8" />
+    <!-- Khai báo bộ mã UTF-8 để hiển thị tiếng Việt chính xác. -->
+
+    <meta
+      expr:content='"width=device-width, initial-scale=1.0"'
+      name="viewport"
+    />
+    <!-- Sử dụng viewport responsive chuẩn cho cả máy tính và thiết bị di động. -->
+
+    <meta
+      content="width=device-width, initial-scale=1.0"
+      name="HandheldFriendly"
+    />
+    <!-- Hỗ trợ cách trình duyệt di động xử lý giao diện responsive. -->
+
+    <meta content="yes" name="mobile-web-app-capable" />
+    <!-- Cho phép trình duyệt di động sử dụng giao diện web phù hợp. -->
+
+    <b:include data="blog" name="all-head-content" />
+    <!-- Giữ nguyên toàn bộ thành phần SEO và hệ thống mặc định quan trọng của Blogger. -->
+
+    <b:if cond='data:blog.pageType == "index"'>
+      <!-- Chỉ áp dụng dữ liệu mô tả cấp website cho trang chủ. -->
+
+      <b:if cond="data:blog.metaDescription">
+        <!-- Kiểm tra xem Blogger đã có mô tả tìm kiếm hay chưa. -->
+
+        <meta expr:content="data:blog.metaDescription" name="description" />
+        <!-- Sử dụng mô tả tìm kiếm Blogger làm meta description chính. -->
+
+        <b:else />
+        <!-- Trường hợp Blogger chưa có mô tả tìm kiếm. -->
+
+        <meta
+          content="Đại lý vé máy bay quốc tế hỗ trợ tư vấn hành trình, chọn chuyến bay, đổi vé và hoàn vé trong nước và quốc tế."
+          name="description"
+        />
+        <!-- Cung cấp mô tả dự phòng có liên quan trực tiếp đến nội dung website. -->
+      </b:if>
+      <!-- Kết thúc điều kiện mô tả trang chủ. -->
+
+      <b:elseif cond='data:blog.pageType == "item"' />
+      <!-- Xử lý riêng trang bài viết. -->
+
+      <b:if cond="data:blog.metaDescription">
+        <!-- Kiểm tra mô tả tìm kiếm của bài viết. -->
+
+        <meta expr:content="data:blog.metaDescription" name="description" />
+        <!-- Sử dụng mô tả tìm kiếm được khai báo trong Blogger. -->
+
+        <b:else />
+        <!-- Trường hợp bài viết chưa có mô tả tìm kiếm riêng. -->
+
+        <meta expr:content="data:blog.pageTitle" name="description" />
+        <!-- Dùng tiêu đề bài viết làm giá trị dự phòng thay vì tạo nội dung giả. -->
+      </b:if>
+      <!-- Kết thúc điều kiện mô tả bài viết. -->
+
+      <b:elseif cond='data:blog.pageType == "static_page"' />
+      <!-- Xử lý riêng trang tĩnh của Blogger. -->
+
+      <meta expr:content="data:blog.metaDescription" name="description" />
+      <!-- Sử dụng mô tả tìm kiếm của trang tĩnh. -->
+    </b:if>
+    <!-- Kết thúc hệ thống meta description. -->
+
+    <title><data:blog.pageTitle/></title>
+    <!-- Sử dụng hệ thống tiêu đề động chính thức của Blogger. -->
+
+    <b:skin
+      ><![CDATA[ /* =========================================================
+      TRUONG BAY BLOGGER NATIVE FLIGHT CONSULTING THEME DESIGN + SPEED +
+      RESPONSIVE + SEO =========================================================
+      */ /* --------------------------------------------------------- 01. BIẾN
+      GIAO DIỆN --------------------------------------------------------- */
+      :root{ --tb-navy:#0b1f33; --tb-blue:#1267a8; --tb-blue-light:#0e8bd3;
+      --tb-gold:#d7a83e; --tb-background:#f5f8fb; --tb-white:#ffffff;
+      --tb-text:#172433; --tb-muted:#667587; --tb-border:#e5ebf1;
+      --tb-radius:18px; --tb-shadow:0 10px 30px rgba(11,31,51,.07);
+      --tb-container:1180px; } /*
+      --------------------------------------------------------- 02. RESET CƠ BẢN
+      --------------------------------------------------------- */ *{
+      box-sizing:border-box; } html{ scroll-behavior:smooth; } body{ margin:0;
+      min-width:0!important; background:var(--tb-background)!important;
+      color:var(--tb-text)!important; font:16px/1.7
+      Arial,Helvetica,sans-serif!important; text-rendering:optimizeLegibility; }
+      a{ color:var(--tb-blue); text-decoration:none; } a:hover{
+      color:var(--tb-blue-light); } img{ max-width:100%; height:auto; border:0;
+      } button, input, textarea, select{ font:inherit; } /*
+      --------------------------------------------------------- 03. LOẠI BỎ
+      KHUNG BLOGGER CŨ NHƯNG GIỮ CẤU TRÚC WIDGET
+      --------------------------------------------------------- */
+      .content-outer, .content-fauxcolumns-outer, .region-inner{
+      min-width:0!important; max-width:none!important; width:auto!important; }
+      .content-outer{ margin:0!important; padding:0!important; } .content-inner{
+      padding:0!important; background:var(--tb-white)!important; }
+      .content-fauxcolumns, .body-fauxcolumns, .content-cap-top,
+      .content-cap-bottom, .header-cap-top, .header-cap-bottom, .tabs-cap-top,
+      .tabs-cap-bottom, .main-cap-top, .main-cap-bottom, .footer-cap-top,
+      .footer-cap-bottom, .fauxcolumn-outer{ display:none!important; }
+      .header-outer, .tabs-outer, .main-outer, .footer-outer{
+      margin:0!important; padding:0!important; } .header-inner, .tabs-inner,
+      .main-inner, .footer-inner{ width:min(var(--tb-container),calc(100% -
+      32px))!important; max-width:var(--tb-container)!important;
+      min-width:0!important; margin:0 auto!important; padding:0!important; } /*
+      --------------------------------------------------------- 04. HEADER
+      --------------------------------------------------------- */
+      .header-outer{ background:var(--tb-navy); border-bottom:1px solid
+      rgba(255,255,255,.08); } .header-inner{ min-height:84px; display:flex;
+      align-items:center; } .header-inner .section{ width:100%; } .Header{
+      padding:17px 0!important; } .Header .titlewrapper, .Header
+      .descriptionwrapper{ padding:0!important; } .Header h1, .Header h1 a,
+      .Header .title{ margin:0!important; color:#fff!important; font:800
+      28px/1.15 Arial,Helvetica,sans-serif!important; letter-spacing:-.4px; }
+      .Header .description{ margin:5px 0 0!important; color:#b9c9d8!important;
+      font-size:13px!important; line-height:1.5!important; } /*
+      --------------------------------------------------------- 05. MENU
+      --------------------------------------------------------- */ .tabs-outer{
+      position:sticky; top:0; z-index:1000; background:#fff; border-bottom:1px
+      solid var(--tb-border); box-shadow:0 4px 18px rgba(11,31,51,.05); }
+      .tabs-inner .section, .tabs-inner .widget{ margin:0!important; }
+      .tabs-inner .widget-content>ul{ display:flex; align-items:center;
+      justify-content:center; gap:4px; margin:0!important; padding:0!important;
+      list-style:none!important; background:none!important; } .tabs-inner
+      .widget-content>ul>li{ margin:0!important; padding:0!important;
+      border:0!important; list-style:none!important; } .tabs-inner
+      .widget-content>ul>li>a{ display:block; padding:16px 17px!important;
+      color:var(--tb-navy)!important; font:700 14px/1
+      Arial,Helvetica,sans-serif!important; white-space:nowrap;
+      border-radius:10px; } .tabs-inner .widget-content>ul>li.selected>a,
+      .tabs-inner .widget-content>ul>li>a:hover{ color:var(--tb-blue)!important;
+      background:#eef7fd!important; } .tabs-inner .widget>h2{
+      display:none!important; } /*
+      --------------------------------------------------------- 06. KHU VỰC BLOG
+      CHÍNH --------------------------------------------------------- */
+      .main-inner{ padding:0!important; } .columns-inner{ min-width:0!important;
+      padding:0!important; } .column-center-outer{ width:100%!important;
+      float:none!important; } .column-center-inner{ padding:0!important; }
+      .column-left-outer, .column-right-outer, .fauxcolumn-left-outer,
+      .fauxcolumn-right-outer{ display:none!important; }
+      .column-center-inner>.section{ margin:0!important; } #main{
+      width:100%!important; } #main .widget{ margin:0!important; } .blog-posts{
+      width:100%!important; } .post-outer{ margin:0!important; } /*
+      --------------------------------------------------------- 07. BÀI VIẾT
+      --------------------------------------------------------- */ .post{
+      max-width:var(--tb-container); margin:26px auto!important; padding:0
+      16px!important; } .post h3.post-title{ margin:0 0 16px!important;
+      color:var(--tb-navy)!important; font:800 32px/1.25
+      Arial,Helvetica,sans-serif!important; letter-spacing:-.5px; } .post
+      h3.post-title a{ color:var(--tb-navy)!important; } .post h3.post-title
+      a:hover{ color:var(--tb-blue)!important; } .post-body{
+      color:var(--tb-text)!important; font:16px/1.85
+      Arial,Helvetica,sans-serif!important; } .post-body p{ margin:0 0 17px; }
+      .post-body h2{ margin:32px 0 14px; color:var(--tb-navy); font-size:27px;
+      line-height:1.35; } .post-body h3{ margin:28px 0 12px;
+      color:var(--tb-navy); font-size:23px; line-height:1.4; } .post-body h4{
+      margin:24px 0 10px; color:var(--tb-navy); font-size:19px; line-height:1.4;
+      } .post-body ul, .post-body ol{ margin:0 0 18px; padding-left:26px; }
+      .post-body li{ margin-bottom:6px; } .post-body img{ display:block;
+      max-width:100%; height:auto; margin:20px auto; border-radius:12px; }
+      .post-body table{ display:block; max-width:100%; overflow-x:auto;
+      border-collapse:collapse; margin:20px 0; } .post-body blockquote{
+      margin:22px 0; padding:15px 19px; border-left:4px solid var(--tb-gold);
+      background:#fff9ec; border-radius:0 10px 10px 0; } .post-footer{
+      margin-top:24px!important; padding-top:17px; border-top:1px solid
+      var(--tb-border); color:var(--tb-muted); } .post-labels a{
+      display:inline-block; margin:4px 5px 0 0; padding:4px 10px;
+      background:#eef7fd; border-radius:30px; font-size:12px; } .post-location{
+      display:block; margin-top:7px; } .jump-link{ margin:20px 0; } .jump-link
+      a{ display:inline-block; padding:10px 16px; background:var(--tb-blue);
+      color:#fff!important; border-radius:9px; font-weight:700; } /*
+      --------------------------------------------------------- 08. PHÂN TRANG
+      --------------------------------------------------------- */ #blog-pager{
+      max-width:var(--tb-container); margin:28px auto!important; padding:0 16px
+      35px!important; display:flex; justify-content:space-between;
+      align-items:center; gap:10px; } #blog-pager a{ padding:10px 15px;
+      background:#fff; border:1px solid var(--tb-border); border-radius:10px;
+      font-weight:700; } #blog-pager a:hover{ border-color:var(--tb-blue);
+      color:var(--tb-blue); } /*
+      --------------------------------------------------------- 09. COMMENTS
+      --------------------------------------------------------- */ #comments{
+      max-width:1148px; margin:22px auto!important; padding:24px!important;
+      background:#fff!important; border:1px solid var(--tb-border);
+      border-radius:var(--tb-radius); } #comments h4{ margin-top:0;
+      color:var(--tb-navy); } .comments-content{ line-height:1.7; } /*
+      --------------------------------------------------------- 10. THÔNG BÁO
+      BLOGGER --------------------------------------------------------- */
+      .date-header{ display:none!important; } .status-msg-wrap{
+      max-width:var(--tb-container); margin:25px auto; padding:0 16px; }
+      .status-msg-body{ padding:14px 18px; background:#eef7fd; border:1px solid
+      #d7eaf7; border-radius:12px; color:var(--tb-navy); } .inline-ad{
+      max-width:var(--tb-container); margin:15px auto; padding:0 16px; } /*
+      --------------------------------------------------------- 11. TRANG CHỦ -
+      HERO --------------------------------------------------------- */
+      .tb-hero{ background:linear-gradient(135deg,#0b1f33 0%,#0e4f7c 55%,#1267a8
+      100%); color:#fff; padding:72px 16px 64px; } .tb-hero-inner{
+      max-width:var(--tb-container); margin:auto; display:grid;
+      grid-template-columns:1.25fr .75fr; gap:40px; align-items:center; }
+      .tb-kicker{ display:inline-block; margin-bottom:12px; color:#f4d477;
+      font-size:13px; font-weight:800; letter-spacing:1.2px;
+      text-transform:uppercase; } .tb-hero h2{ margin:0 0 15px; color:#fff;
+      font:800 clamp(34px,5vw,58px)/1.08 Arial,sans-serif;
+      letter-spacing:-1.2px; } .tb-hero p{ max-width:720px; margin:0;
+      color:#dbe8f2; font-size:17px; line-height:1.7; } .tb-actions{
+      display:flex; flex-wrap:wrap; gap:12px; margin-top:25px; } .tb-btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      min-height:46px; padding:0 18px; border-radius:10px; font-weight:800; }
+      .tb-btn-primary{ background:var(--tb-gold); color:#18202a!important; }
+      .tb-btn-primary:hover{ background:#ebc75f; color:#18202a!important; }
+      .tb-btn-light{ background:#fff; color:var(--tb-navy)!important; }
+      .tb-btn-light:hover{ background:#eef7fd; color:var(--tb-navy)!important; }
+      .tb-contact-card{ padding:25px; background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.16); border-radius:20px; }
+      .tb-contact-card strong{ display:block; margin-bottom:7px; color:#fff;
+      font-size:24px; } .tb-contact-card span{ color:#dbe8f2; } /*
+      --------------------------------------------------------- 12. CÁC SECTION
+      TRANG CHỦ --------------------------------------------------------- */
+      .tb-section{ max-width:var(--tb-container); margin:0 auto; padding:55px
+      16px; } .tb-section-title{ margin:0 0 10px; color:var(--tb-navy);
+      text-align:center; font:800 30px/1.25 Arial,sans-serif; }
+      .tb-section-lead{ max-width:720px; margin:0 auto 30px;
+      color:var(--tb-muted); text-align:center; } .tb-grid{ display:grid;
+      grid-template-columns:repeat(4,1fr); gap:16px; } .tb-card{ padding:24px;
+      background:#fff; border:1px solid var(--tb-border);
+      border-radius:var(--tb-radius); box-shadow:var(--tb-shadow); } .tb-card
+      h3{ margin:0 0 8px; color:var(--tb-navy); font-size:18px; } .tb-card p{
+      margin:0; color:var(--tb-muted); font-size:14px; } .tb-icon{ width:44px;
+      height:44px; display:flex; align-items:center; justify-content:center;
+      margin-bottom:15px; background:#eef7fd; border-radius:12px;
+      font-size:21px; } /*
+      --------------------------------------------------------- 13. HÀNH TRÌNH
+      --------------------------------------------------------- */ .tb-routes{
+      background:#f1f6fa; } .tb-route-grid{ display:grid;
+      grid-template-columns:repeat(3,1fr); gap:14px; } .tb-route{ padding:17px;
+      background:#fff; border:1px solid var(--tb-border); border-radius:14px;
+      color:var(--tb-navy); font-weight:800; } .tb-route span{ display:block;
+      margin-top:3px; color:var(--tb-muted); font-size:12px; font-weight:400; }
+      /* --------------------------------------------------------- 14. QUY TRÌNH
+      --------------------------------------------------------- */ .tb-process{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:16px; } .tb-step b{
+      display:flex; width:40px; height:40px; align-items:center;
+      justify-content:center; margin-bottom:12px; background:var(--tb-navy);
+      border-radius:50%; color:#fff; } /*
+      --------------------------------------------------------- 15. CALL TO
+      ACTION --------------------------------------------------------- */
+      .tb-cta{ max-width:var(--tb-container); margin:20px auto 55px;
+      padding:34px 28px; display:flex; align-items:center;
+      justify-content:space-between; gap:25px; background:var(--tb-navy);
+      border-radius:20px; color:#fff; } .tb-cta h2{ margin:0 0 5px; color:#fff;
+      font-size:27px; } .tb-cta p{ margin:0; color:#cbd9e5; } /*
+      --------------------------------------------------------- 16. FOOTER
+      --------------------------------------------------------- */ footer{
+      background:var(--tb-navy); } .footer-outer{ background:var(--tb-navy);
+      color:#b9c9d8; } .footer-inner{ padding:34px 16px!important; }
+      .footer-inner .widget, .footer-inner .widget h2{ color:#fff; } #footer-3{
+      margin-top:20px; padding-top:18px; border-top:1px solid
+      rgba(255,255,255,.1); } /*
+      --------------------------------------------------------- 17. ẨN CÁC THÀNH
+      PHẦN KHÔNG CẦN THIẾT
+      --------------------------------------------------------- */ .feed-links,
+      .blog-feeds, .post-feeds{ display:none!important; } .loading{
+      opacity:1!important; } /*
+      --------------------------------------------------------- 18. RESPONSIVE
+      TABLET --------------------------------------------------------- */
+      @media(max-width:900px){ .tb-hero-inner{ grid-template-columns:1fr; }
+      .tb-grid{ grid-template-columns:repeat(2,1fr); } .tb-process{
+      grid-template-columns:repeat(2,1fr); } .tb-route-grid{
+      grid-template-columns:repeat(2,1fr); } } /*
+      --------------------------------------------------------- 19. RESPONSIVE
+      ĐIỆN THOẠI --------------------------------------------------------- */
+      @media(max-width:650px){ .header-inner, .tabs-inner, .main-inner,
+      .footer-inner{ width:min(100% - 22px,1180px)!important; } .Header{
+      padding:15px 0!important; } .Header h1, .Header h1 a, .Header .title{
+      font-size:23px!important; } .tabs-inner .widget-content>ul{
+      justify-content:flex-start; overflow-x:auto; scrollbar-width:none; }
+      .tabs-inner .widget-content>ul::-webkit-scrollbar{ display:none; }
+      .tabs-inner .widget-content>ul>li>a{ padding:14px 11px!important;
+      font-size:13px!important; } .tb-hero{ padding:48px 11px; } .tb-hero h2{
+      font-size:35px; } .tb-hero p{ font-size:15px; } .tb-grid, .tb-process,
+      .tb-route-grid{ grid-template-columns:1fr; } .tb-section{ padding:40px
+      11px; } .tb-section-title{ font-size:26px; } .tb-cta{ margin:10px 11px
+      40px; display:block; padding:26px 20px; } .tb-cta .tb-btn{
+      margin-top:18px; } .post{ margin:18px auto!important; padding:0
+      11px!important; } .post h3.post-title{ font-size:25px!important; }
+      .post-body{ font-size:16px!important; } #comments{ margin:15px
+      11px!important; } #blog-pager{ padding:0 11px 25px!important; } }
+      ]]></b:skin
+    >
+    <!-- Kết thúc toàn bộ CSS giao diện. -->
+
+    <b:template-skin>
+      <!-- Bắt đầu CSS dành cho trình chỉnh sửa bố cục Blogger. -->
+
+      <b:variable default="1180px" name="content.width" type="length" />
+      <!-- Đặt chiều rộng nội dung mặc định là 1180 pixel. -->
+
+      <b:variable default="0" name="main.column.left.width" type="length" />
+      <!-- Tắt cột trái mặc định. -->
+
+      <b:variable default="0" name="main.column.right.width" type="length" />
+      <!-- Tắt cột phải mặc định. -->
+
+      <![CDATA[ body{min-width:0;} .content-outer, .content-fauxcolumn-outer,
+      .region-inner{min-width:0;max-width:1180px;width:auto;} .main-inner
+      .columns{padding-left:0;padding-right:0;} .main-inner
+      .fauxcolumn-center-outer{left:0;right:0;} .main-inner
+      .fauxcolumn-left-outer, .main-inner .fauxcolumn-right-outer, .main-inner
+      .column-left-outer, .main-inner .column-right-outer{width:0;}
+      #layout{min-width:0;} #layout .content-outer{min-width:0;width:100%;}
+      #layout .region-inner{min-width:0;width:auto;} body#layout
+      div.add_widget{padding:8px;} body#layout div.add_widget
+      a{margin-left:32px;} ]]>
+      <!-- Giữ Blogger Layout hoạt động mà không làm thay đổi cấu trúc quản lý nội dung. -->
+    </b:template-skin>
+    <!-- Kết thúc CSS Layout Blogger. -->
+
+    <b:include data="blog" name="google-analytics" />
+    <!-- Giữ hệ thống Google Analytics của Blogger. -->
+  </head>
+  <!-- Kết thúc phần head. -->
+
+  <body expr:class='"loading " + data:blog.mobileClass'>
+    <!-- Bắt đầu phần thân và giữ class thiết bị mặc định của Blogger. -->
+
+    <b:if cond='data:blog.pageType == "index"'>
+      <!-- Chỉ tạo dữ liệu Blog schema trên trang tổng quan. -->
+
+      <div
+        itemscope="itemscope"
+        itemtype="https://schema.org/Blog"
+        style="display: none"
+      >
+        <!-- Khai báo thực thể Blog cho công cụ tìm kiếm. -->
+
+        <meta expr:content="data:blog.title" itemprop="name" />
+        <!-- Cung cấp tên website cho Blog schema. -->
+
+        <b:if cond="data:blog.metaDescription">
+          <!-- Kiểm tra mô tả website. -->
+
+          <meta
+            expr:content="data:blog.metaDescription"
+            itemprop="description"
+          />
+          <!-- Cung cấp mô tả website cho Blog schema. -->
+        </b:if>
+        <!-- Kết thúc kiểm tra mô tả. -->
+
+        <meta expr:content="data:blog.homepageUrl" itemprop="url" />
+        <!-- Cung cấp URL website chính thức cho Blog schema. -->
+      </div>
+      <!-- Kết thúc Blog schema. -->
+    </b:if>
+    <!-- Kết thúc dữ liệu Blog schema. -->
+
+    <div class="content">
+      <!-- Bắt đầu vùng nội dung chính của Blogger. -->
+
+      <div class="content-outer">
+        <!-- Bắt đầu khung nội dung Blogger. -->
+
+        <div class="content-inner">
+          <!-- Bắt đầu nội dung bên trong. -->
+
+          <header>
+            <!-- Bắt đầu khu vực Header. -->
+
+            <div class="header-outer">
+              <!-- Khung Header chính. -->
+
+              <div class="region-inner header-inner">
+                <!-- Container Header responsive. -->
+
+                <b:section
+                  class="header"
+                  id="header"
+                  maxwidgets="1"
+                  name="Header"
+                  showaddelement="no"
+                >
+                  <b:widget
+                    id="Header1"
+                    locked="true"
+                    title="Truongbay (Tiêu đề)"
+                    type="Header"
+                    version="1"
+                  >
+                    <b:widget-settings>
+                      <b:widget-setting name="displayUrl" />
+                      <b:widget-setting name="displayHeight"
+                        >0</b:widget-setting
+                      >
+                      <b:widget-setting name="sectionWidth"
+                        >600</b:widget-setting
+                      >
+                      <b:widget-setting name="useImage">false</b:widget-setting>
+                      <b:widget-setting name="shrinkToFit"
+                        >false</b:widget-setting
+                      >
+                      <b:widget-setting name="imagePlacement"
+                        >BEHIND</b:widget-setting
+                      >
+                      <b:widget-setting name="displayWidth">0</b:widget-setting>
+                    </b:widget-settings>
+                    <b:includable id="main">
+                      <!-- Bắt đầu nội dung Header. -->
+
+                      <div id="header-inner">
+                        <!-- Khung Header nội bộ. -->
+
+                        <div class="titlewrapper">
+                          <!-- Khung tiêu đề website. -->
+
+                          <h1 class="title">
+                            <!-- Dùng H1 cho tên website trên Header. -->
+
+                            <b:include name="title" />
+                            <!-- Gọi tiêu đề Blogger. -->
+                          </h1>
+                          <!-- Kết thúc H1. -->
+                        </div>
+                        <!-- Kết thúc khung tiêu đề. -->
+
+                        <b:include name="description" />
+                        <!-- Gọi mô tả website của Blogger. -->
+                      </div>
+                      <!-- Kết thúc Header nội bộ. -->
+                    </b:includable>
+                    <b:includable id="description">
+                      <!-- Bắt đầu mô tả website. -->
+
+                      <div class="descriptionwrapper">
+                        <!-- Khung mô tả website. -->
+
+                        <p class="description">
+                          <!-- Dùng đoạn văn cho mô tả website. -->
+
+                          <span><data:description /></span>
+                          <!-- Hiển thị mô tả được nhập trong Blogger. -->
+                        </p>
+                        <!-- Kết thúc đoạn mô tả. -->
+                      </div>
+                      <!-- Kết thúc khung mô tả. -->
+                    </b:includable>
+                    <b:includable id="title">
+                      <!-- Bắt đầu tiêu đề Blogger. -->
+
+                      <b:tag
+                        cond="data:blog.url != data:blog.homepageUrl"
+                        expr:href="data:blog.homepageUrl"
+                        name="a"
+                      >
+                        <!-- Liên kết tiêu đề về trang chủ khi người dùng đang ở trang con. -->
+
+                        <data:title />
+                        <!-- Hiển thị tên website. -->
+                      </b:tag>
+                      <!-- Kết thúc liên kết tiêu đề. -->
+                    </b:includable>
+                  </b:widget>
+                </b:section>
+                <!-- Kết thúc Header section. -->
+              </div>
+              <!-- Kết thúc Header container. -->
+            </div>
+            <!-- Kết thúc Header outer. -->
+          </header>
+          <!-- Kết thúc Header. -->
+
+          <nav aria-label="Điều hướng chính" class="tabs-outer">
+            <!-- Bắt đầu menu điều hướng chính. -->
+
+            <div class="region-inner tabs-inner">
+              <!-- Container menu responsive. -->
+
+              <b:section
+                class="tabs"
+                id="crosscol"
+                maxwidgets="1"
+                name="Cross-Column"
+                showaddelement="yes"
+              >
+                <b:widget
+                  id="PageList1"
+                  locked="false"
+                  title="Trang"
+                  type="PageList"
+                  version="1"
+                >
+                  <b:widget-settings>
+                    <b:widget-setting name="pageListJson"
+                      ><![CDATA[{"link0":{"href":"https://truongbayvn.blogspot.com/","position":0,"title":"TRANG
+                      CHỦ"}}]]></b:widget-setting
+                    >
+                    <b:widget-setting name="homeTitle"
+                      >Trang chủ</b:widget-setting
+                    >
+                  </b:widget-settings>
+                  <b:includable id="main">
+                    <!-- Bắt đầu hiển thị menu. -->
+
+                    <div class="widget-content">
+                      <!-- Khung nội dung menu. -->
+
+                      <b:if cond="data:mobile">
+                        <!-- Xử lý menu trên thiết bị di động. -->
+
+                        <select
+                          aria-label="Điều hướng trang"
+                          expr:id='data:widget.instanceId + "_select"'
+                        >
+                          <!-- Tạo menu chọn trên thiết bị hỗ trợ chế độ mobile của Blogger. -->
+
+                          <b:loop values="data:links" var="link">
+                            <!-- Lặp qua toàn bộ liên kết Blogger. -->
+
+                            <option expr:value="data:link.href">
+                              <!-- Tạo từng lựa chọn menu. -->
+
+                              <data:link.title />
+                              <!-- Hiển thị tên trang. -->
+                            </option>
+                            <!-- Kết thúc lựa chọn. -->
+                          </b:loop>
+                          <!-- Kết thúc vòng lặp menu mobile. -->
+                        </select>
+                        <!-- Kết thúc menu mobile. -->
+
+                        <b:else />
+                        <!-- Hiển thị menu ngang trên desktop. -->
+
+                        <ul>
+                          <!-- Danh sách menu semantic. -->
+
+                          <b:loop values="data:links" var="link">
+                            <!-- Lặp toàn bộ trang Blogger. -->
+
+                            <li>
+                              <!-- Phần tử menu. -->
+
+                              <b:class
+                                cond="data:link.isCurrentPage"
+                                name="selected"
+                              />
+                              <!-- Đánh dấu trang hiện tại. -->
+
+                              <a expr:href="data:link.href">
+                                <!-- Tạo liên kết đến trang Blogger. -->
+
+                                <data:link.title />
+                                <!-- Hiển thị tên trang. -->
+                              </a>
+                              <!-- Kết thúc liên kết. -->
+                            </li>
+                            <!-- Kết thúc mục menu. -->
+                          </b:loop>
+                          <!-- Kết thúc vòng lặp menu. -->
+                        </ul>
+                        <!-- Kết thúc danh sách menu. -->
+                      </b:if>
+                      <!-- Kết thúc điều kiện desktop/mobile. -->
+                    </div>
+                    <!-- Kết thúc nội dung menu. -->
+                  </b:includable>
+                </b:widget>
+              </b:section>
+              <!-- Kết thúc section menu. -->
+            </div>
+            <!-- Kết thúc container menu. -->
+          </nav>
+          <!-- Kết thúc menu. -->
+
+          <b:if cond='data:blog.pageType == "index"'>
+            <!-- Chỉ hiển thị phần landing page này trên trang chủ. -->
+
+            <section class="tb-hero">
+              <!-- Bắt đầu khu vực giới thiệu chính. -->
+
+              <div class="tb-hero-inner">
+                <!-- Container Hero. -->
+
+                <div>
+                  <!-- Cột nội dung Hero. -->
+
+                  <span class="tb-kicker">Đại lý vé máy bay quốc tế</span>
+                  <!-- Từ khóa chủ đề chính của website. -->
+
+                  <h2>Tư vấn hành trình, chọn chuyến bay phù hợp</h2>
+                  <!-- Tiêu đề nội dung chính của trang chủ. -->
+
+                  <p>
+                    Hỗ trợ tư vấn hành trình, đặt vé, đổi vé và hoàn vé cho các
+                    chuyến bay trong nước và quốc tế. Liên hệ để được hỗ trợ
+                    nhanh theo nhu cầu thực tế của từng hành trình.
+                  </p>
+                  <!-- Nội dung giới thiệu dịch vụ tự nhiên và rõ ràng. -->
+
+                  <div class="tb-actions">
+                    <!-- Khu vực nút liên hệ. -->
+
+                    <a
+                      class="tb-btn tb-btn-primary"
+                      href="https://zalo.me/0979245250"
+                      rel="nofollow noopener"
+                      >Liên hệ tư vấn nhanh 24/7</a
+                    >
+                    <!-- Nút liên hệ Zalo không truyền giá trị SEO không cần thiết. -->
+
+                    <a class="tb-btn tb-btn-light" href="tel:0979245250"
+                      >Gọi 0979 245 250</a
+                    >
+                    <!-- Nút gọi điện trực tiếp trên thiết bị hỗ trợ điện thoại. -->
+                  </div>
+                  <!-- Kết thúc khu vực nút. -->
+                </div>
+                <!-- Kết thúc cột Hero. -->
+
+                <div class="tb-contact-card">
+                  <!-- Bắt đầu thẻ thông tin liên hệ. -->
+
+                  <strong>0979 245 250</strong>
+                  <!-- Số điện thoại chính. -->
+
+                  <span>Tư vấn hành trình và hỗ trợ vé máy bay</span>
+                  <!-- Mô tả ngắn về dịch vụ. -->
+                </div>
+                <!-- Kết thúc thẻ liên hệ. -->
+              </div>
+              <!-- Kết thúc Hero container. -->
+            </section>
+            <!-- Kết thúc Hero. -->
+
+            <section class="tb-section">
+              <!-- Bắt đầu khu vực dịch vụ. -->
+
+              <h2 class="tb-section-title">Dịch vụ tư vấn</h2>
+              <!-- Tiêu đề cấp hai của nhóm dịch vụ. -->
+
+              <p class="tb-section-lead">
+                Tập trung vào việc tư vấn đúng nhu cầu, thông tin rõ ràng và hỗ
+                trợ trong quá trình sử dụng vé.
+              </p>
+              <!-- Mô tả nhóm dịch vụ. -->
+
+              <div class="tb-grid">
+                <!-- Bắt đầu lưới dịch vụ. -->
+
+                <div class="tb-card">
+                  <!-- Thẻ dịch vụ thứ nhất. -->
+
+                  <div aria-hidden="true" class="tb-icon">&#9992;</div>
+                  <!-- Biểu tượng dịch vụ. -->
+
+                  <h3>Tư vấn hành trình</h3>
+                  <!-- Tên dịch vụ. -->
+
+                  <p>
+                    Trao đổi điểm đi, điểm đến, thời gian và nhu cầu để tìm
+                    phương án phù hợp.
+                  </p>
+                  <!-- Mô tả dịch vụ. -->
+                </div>
+                <!-- Kết thúc thẻ thứ nhất. -->
+
+                <div class="tb-card">
+                  <!-- Thẻ dịch vụ thứ hai. -->
+
+                  <div aria-hidden="true" class="tb-icon">&#9673;</div>
+                  <!-- Biểu tượng dịch vụ. -->
+
+                  <h3>Chọn chuyến bay</h3>
+                  <!-- Tên dịch vụ. -->
+
+                  <p>
+                    Hỗ trợ xem các lựa chọn chuyến bay và tư vấn theo lịch trình
+                    thực tế.
+                  </p>
+                  <!-- Mô tả dịch vụ. -->
+                </div>
+                <!-- Kết thúc thẻ thứ hai. -->
+
+                <div class="tb-card">
+                  <!-- Thẻ dịch vụ thứ ba. -->
+
+                  <div aria-hidden="true" class="tb-icon">&#9635;</div>
+                  <!-- Biểu tượng dịch vụ. -->
+
+                  <h3>Đổi vé</h3>
+                  <!-- Tên dịch vụ. -->
+
+                  <p>
+                    Hỗ trợ kiểm tra thông tin và tư vấn quy trình khi cần thay
+                    đổi hành trình.
+                  </p>
+                  <!-- Mô tả dịch vụ. -->
+                </div>
+                <!-- Kết thúc thẻ thứ ba. -->
+
+                <div class="tb-card">
+                  <!-- Thẻ dịch vụ thứ tư. -->
+
+                  <div aria-hidden="true" class="tb-icon">&#8617;</div>
+                  <!-- Biểu tượng dịch vụ. -->
+
+                  <h3>Hoàn vé</h3>
+                  <!-- Tên dịch vụ. -->
+
+                  <p>
+                    Hướng dẫn thông tin và hỗ trợ xử lý yêu cầu hoàn vé theo
+                    điều kiện của từng vé.
+                  </p>
+                  <!-- Mô tả dịch vụ. -->
+                </div>
+                <!-- Kết thúc thẻ thứ tư. -->
+              </div>
+              <!-- Kết thúc lưới dịch vụ. -->
+            </section>
+            <!-- Kết thúc khu vực dịch vụ. -->
+
+            <section class="tb-section tb-routes">
+              <!-- Bắt đầu khu vực hành trình. -->
+
+              <h2 class="tb-section-title">Một số hành trình quốc tế</h2>
+              <!-- Tiêu đề hành trình. -->
+
+              <p class="tb-section-lead">
+                Liên hệ để kiểm tra hành trình và thời gian bay phù hợp với nhu
+                cầu của bạn.
+              </p>
+              <!-- Mô tả hành trình. -->
+
+              <div class="tb-route-grid">
+                <!-- Bắt đầu lưới hành trình. -->
+
+                <div class="tb-route">
+                  Việt Nam &#8596; Nhật Bản<span
+                    >Tư vấn hành trình theo từng thành phố</span
+                  >
+                </div>
+                <!-- Hành trình Việt Nam - Nhật Bản. -->
+
+                <div class="tb-route">
+                  Việt Nam &#8596; Hàn Quốc<span
+                    >Hỗ trợ chọn chuyến và thời gian</span
+                  >
+                </div>
+                <!-- Hành trình Việt Nam - Hàn Quốc. -->
+
+                <div class="tb-route">
+                  Việt Nam &#8596; Trung Quốc<span
+                    >Tư vấn các phương án hành trình</span
+                  >
+                </div>
+                <!-- Hành trình Việt Nam - Trung Quốc. -->
+
+                <div class="tb-route">
+                  Việt Nam &#8596; Thái Lan<span
+                    >Hỗ trợ hành trình trong khu vực</span
+                  >
+                </div>
+                <!-- Hành trình Việt Nam - Thái Lan. -->
+
+                <div class="tb-route">
+                  Việt Nam &#8596; Singapore<span
+                    >Tư vấn chuyến bay quốc tế</span
+                  >
+                </div>
+                <!-- Hành trình Việt Nam - Singapore. -->
+
+                <div class="tb-route">
+                  Việt Nam &#8596; Các điểm đến khác<span
+                    >Liên hệ để được kiểm tra</span
+                  >
+                </div>
+                <!-- Nhóm hành trình khác. -->
+              </div>
+              <!-- Kết thúc lưới hành trình. -->
+            </section>
+            <!-- Kết thúc khu vực hành trình. -->
+
+            <section class="tb-section">
+              <!-- Bắt đầu khu vực quy trình. -->
+
+              <h2 class="tb-section-title">Quy trình hỗ trợ</h2>
+              <!-- Tiêu đề quy trình. -->
+
+              <p class="tb-section-lead">
+                Trao đổi thông tin trước, sau đó lựa chọn phương án phù hợp với
+                hành trình.
+              </p>
+              <!-- Mô tả quy trình. -->
+
+              <div class="tb-process">
+                <!-- Bắt đầu các bước hỗ trợ. -->
+
+                <div class="tb-card tb-step">
+                  <!-- Bước một. -->
+
+                  <b>1</b>
+                  <!-- Số bước. -->
+
+                  <h3>Gửi nhu cầu</h3>
+                  <!-- Tên bước. -->
+
+                  <p>Điểm đi, điểm đến, ngày bay và số lượng hành khách.</p>
+                  <!-- Mô tả bước. -->
+                </div>
+                <!-- Kết thúc bước một. -->
+
+                <div class="tb-card tb-step">
+                  <!-- Bước hai. -->
+
+                  <b>2</b>
+                  <!-- Số bước. -->
+
+                  <h3>Tư vấn</h3>
+                  <!-- Tên bước. -->
+
+                  <p>Trao đổi các lựa chọn phù hợp với hành trình.</p>
+                  <!-- Mô tả bước. -->
+                </div>
+                <!-- Kết thúc bước hai. -->
+
+                <div class="tb-card tb-step">
+                  <!-- Bước ba. -->
+
+                  <b>3</b>
+                  <!-- Số bước. -->
+
+                  <h3>Chọn chuyến</h3>
+                  <!-- Tên bước. -->
+
+                  <p>Kiểm tra thông tin và thống nhất phương án.</p>
+                  <!-- Mô tả bước. -->
+                </div>
+                <!-- Kết thúc bước ba. -->
+
+                <div class="tb-card tb-step">
+                  <!-- Bước bốn. -->
+
+                  <b>4</b>
+                  <!-- Số bước. -->
+
+                  <h3>Hỗ trợ sau đặt</h3>
+                  <!-- Tên bước. -->
+
+                  <p>Hỗ trợ thông tin khi cần đổi hoặc hoàn vé.</p>
+                  <!-- Mô tả bước. -->
+                </div>
+                <!-- Kết thúc bước bốn. -->
+              </div>
+              <!-- Kết thúc quy trình. -->
+            </section>
+            <!-- Kết thúc khu vực quy trình. -->
+
+            <section class="tb-cta">
+              <!-- Bắt đầu lời kêu gọi liên hệ. -->
+
+              <div>
+                <!-- Khối nội dung CTA. -->
+
+                <h2>Cần tư vấn hành trình?</h2>
+                <!-- Tiêu đề CTA. -->
+
+                <p>Liên hệ Zalo hoặc gọi trực tiếp để được hỗ trợ nhanh.</p>
+                <!-- Mô tả CTA. -->
+              </div>
+              <!-- Kết thúc nội dung CTA. -->
+
+              <a
+                class="tb-btn tb-btn-primary"
+                href="https://zalo.me/0979245250"
+                rel="nofollow noopener"
+                >Liên hệ tư vấn 24/7</a
+              >
+              <!-- Nút liên hệ Zalo. -->
+            </section>
+            <!-- Kết thúc CTA. -->
+          </b:if>
+          <!-- Kết thúc nội dung riêng của trang chủ. -->
+
+          <main class="main-outer" id="main-content">
+            <!-- Bắt đầu khu vực Blog chính và giữ Blog1 nguyên bản. -->
+
+            <div class="region-inner main-inner">
+              <!-- Container Blog chính. -->
+
+              <div class="columns-inner">
+                <!-- Giữ cấu trúc cột chuẩn của Blogger. -->
+
+                <div class="column-center-outer">
+                  <!-- Bắt đầu cột nội dung trung tâm. -->
+
+                  <div class="column-center-inner">
+                    <!-- Nội dung bên trong cột trung tâm. -->
+
+                    <b:section
+                      class="main"
+                      id="main"
+                      name="Main"
+                      showaddelement="no"
+                    >
+                      <b:widget
+                        id="Blog1"
+                        locked="true"
+                        title="Bài đăng trên Blog"
+                        type="Blog"
+                        version="1"
+                      >
+                        <b:widget-settings>
+                          <b:widget-setting name="showDateHeader"
+                            >false</b:widget-setting
+                          >
+                          <b:widget-setting name="style.textcolor"
+                            >#ffffff</b:widget-setting
+                          >
+                          <b:widget-setting name="showShareButtons"
+                            >true</b:widget-setting
+                          >
+                          <b:widget-setting name="authorLabel"
+                            >By</b:widget-setting
+                          >
+                          <b:widget-setting name="showCommentLink"
+                            >true</b:widget-setting
+                          >
+                          <b:widget-setting name="style.urlcolor"
+                            >#ffffff</b:widget-setting
+                          >
+                          <b:widget-setting name="showAuthor"
+                            >false</b:widget-setting
+                          >
+                          <b:widget-setting name="style.linkcolor"
+                            >#ffffff</b:widget-setting
+                          >
+                          <b:widget-setting name="style.unittype"
+                            >TextAndImage</b:widget-setting
+                          >
+                          <b:widget-setting name="style.bgcolor"
+                            >#ffffff</b:widget-setting
+                          >
+                          <b:widget-setting name="reactionsLabel" />
+                          <b:widget-setting name="showAuthorProfile"
+                            >false</b:widget-setting
+                          >
+                          <b:widget-setting name="style.layout"
+                            >1x1</b:widget-setting
+                          >
+                          <b:widget-setting name="showLabels"
+                            >true</b:widget-setting
+                          >
+                          <b:widget-setting name="showLocation"
+                            >true</b:widget-setting
+                          >
+                          <b:widget-setting name="showTimestamp"
+                            >true</b:widget-setting
+                          >
+                          <b:widget-setting name="postsPerAd"
+                            >3</b:widget-setting
+                          >
+                          <b:widget-setting name="showBacklinks"
+                            >false</b:widget-setting
+                          >
+                          <b:widget-setting name="style.bordercolor"
+                            >#ffffff</b:widget-setting
+                          >
+                          <b:widget-setting name="showInlineAds"
+                            >true</b:widget-setting
+                          >
+                          <b:widget-setting name="showReactions"
+                            >false</b:widget-setting
+                          >
+                        </b:widget-settings>
+                        <b:includable id="main" var="top">
+                          <!-- Bắt đầu hệ thống hiển thị Blog chính. -->
+
+                          <b:if cond="!data:mobile">
+                            <!-- Hiển thị desktop theo hệ thống Blog1. -->
+
+                            <div class="blog-posts hfeed">
+                              <!-- Container semantic cho danh sách bài viết. -->
+
+                              <b:include data="top" name="status-message" />
+                              <!-- Hiển thị thông báo Blogger khi có. -->
+
+                              <b:loop values="data:posts" var="post">
+                                <!-- Lặp qua toàn bộ bài viết do Blogger cung cấp. -->
+
+                                <div class="post-outer">
+                                  <!-- Container ngoài của từng bài. -->
+
+                                  <b:include data="post" name="post" />
+                                  <!-- Gọi template bài viết chuẩn. -->
+
+                                  <b:include
+                                    cond='data:blog.pageType in {"static_page","item"}'
+                                    data="post"
+                                    name="comment_picker"
+                                  />
+                                  <!-- Chỉ gọi bình luận trên bài viết và trang tĩnh. -->
+                                </div>
+                                <!-- Kết thúc bài viết. -->
+
+                                <b:if cond="data:post.includeAd">
+                                  <!-- Kiểm tra quảng cáo nội tuyến của Blogger. -->
+
+                                  <div class="inline-ad">
+                                    <!-- Container quảng cáo. -->
+
+                                    <data:adCode />
+                                    <!-- Xuất mã quảng cáo do Blogger cung cấp. -->
+                                  </div>
+                                  <!-- Kết thúc quảng cáo. -->
+                                </b:if>
+                                <!-- Kết thúc điều kiện quảng cáo. -->
+                              </b:loop>
+                              <!-- Kết thúc vòng lặp bài viết. -->
+                            </div>
+                            <!-- Kết thúc danh sách bài viết. -->
+
+                            <b:include name="nextprev" />
+                            <!-- Giữ phân trang chuẩn của Blogger. -->
+
+                            <b:else />
+                            <!-- Chuyển sang hệ thống mobile của Blogger. -->
+
+                            <b:include name="mobile-main" />
+                            <!-- Giữ cấu trúc Blog mobile chuẩn. -->
+                          </b:if>
+                          <!-- Kết thúc điều kiện desktop/mobile. -->
+                        </b:includable>
+                        <b:includable id="backlinkDeleteIcon" var="backlink" />
+                        <b:includable id="backlinks" var="post" />
+                        <b:includable id="comment-form" var="post">
+                          <!-- Bắt đầu biểu mẫu bình luận Blogger. -->
+
+                          <div class="comment-form">
+                            <!-- Container form bình luận. -->
+
+                            <a name="comment-form" />
+                            <!-- Neo biểu mẫu bình luận. -->
+
+                            <p><data:blogCommentMessage /></p>
+                            <!-- Hiển thị thông báo bình luận của Blogger. -->
+
+                            <a
+                              expr:href="data:post.commentFormIframeSrc"
+                              id="comment-editor-src"
+                            />
+                            <!-- Cung cấp nguồn iframe bình luận cho Blogger. -->
+
+                            <iframe
+                              allowtransparency="true"
+                              class="blogger-iframe-colorize blogger-comment-from-post"
+                              expr:height="data:cmtIframeInitialHeight"
+                              frameborder="0"
+                              id="comment-editor"
+                              name="comment-editor"
+                              src=""
+                              width="100%"
+                            />
+                            <!-- Giữ iframe bình luận chính thức của Blogger. -->
+
+                            <data:post.cmtfpIframe />
+                            <!-- Xuất dữ liệu iframe bình luận của Blogger. -->
+
+                            <script type="text/javascript">
+                              BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+                            </script>
+                            <!-- Khởi tạo hệ thống bình luận Blogger. -->
+                          </div>
+                          <!-- Kết thúc form. -->
+                        </b:includable>
+                        <b:includable id="commentDeleteIcon" var="comment">
+                          <span
+                            expr:class='"item-control " + data:comment.adminClass'
+                          >
+                            <b:if cond="data:showCmtPopup">
+                              <div class="goog-toggle-button">
+                                <div
+                                  class="goog-inline-block comment-action-icon"
+                                />
+                              </div>
+                              <b:else />
+                              <a
+                                class="comment-delete"
+                                expr:href="data:comment.deleteUrl"
+                                expr:title="data:top.deleteCommentMsg"
+                              >
+                                <img
+                                  src="https://resources.blogblog.com/img/icon_delete13.gif"
+                                />
+                              </a>
+                            </b:if>
+                          </span>
+                        </b:includable>
+                        <b:includable id="comment_count_picker" var="post">
+                          <!-- Bắt đầu liên kết số bình luận. -->
+
+                          <a
+                            class="comment-link"
+                            expr:href="data:post.addCommentUrl"
+                            expr:onclick="data:post.addCommentOnclick"
+                          >
+                            <!-- Tạo liên kết bình luận. -->
+
+                            <data:post.commentLabelFull />
+                            <!-- Hiển thị tên bình luận. -->
+                          </a>
+                          <!-- Kết thúc liên kết bình luận. -->
+                        </b:includable>
+                        <b:includable id="comment_picker" var="post">
+                          <!-- Bắt đầu hệ thống bình luận. -->
+
+                          <b:if cond="data:post.showThreadedComments">
+                            <!-- Kiểm tra bình luận dạng luồng. -->
+
+                            <b:include data="post" name="threaded_comments" />
+                            <!-- Gọi hệ thống bình luận luồng. -->
+
+                            <b:else />
+                            <!-- Trường hợp Blogger sử dụng bình luận thường. -->
+
+                            <b:include data="post" name="comments" />
+                            <!-- Gọi bình luận chuẩn Blogger. -->
+                          </b:if>
+                          <!-- Kết thúc lựa chọn hệ thống bình luận. -->
+                        </b:includable>
+                        <b:includable id="comments" var="post">
+                          <!-- Bắt đầu bình luận chuẩn. -->
+
+                          <div class="comments" id="comments">
+                            <!-- Container bình luận. -->
+
+                            <a name="comments" />
+                            <!-- Neo bình luận. -->
+
+                            <b:if cond="data:post.allowComments">
+                              <!-- Kiểm tra bài viết cho phép bình luận. -->
+
+                              <h4><data:post.commentLabelFull /></h4>
+                              <!-- Tiêu đề bình luận. -->
+
+                              <div class="comments-content">
+                                <!-- Container nội dung bình luận. -->
+
+                                <dl id="comments-block">
+                                  <!-- Danh sách bình luận semantic. -->
+
+                                  <b:loop
+                                    values="data:post.comments"
+                                    var="comment"
+                                  >
+                                    <!-- Lặp qua bình luận. -->
+
+                                    <dt expr:id="data:comment.anchorName">
+                                      <!-- Tên người bình luận. -->
+
+                                      <b:if cond="data:comment.authorUrl">
+                                        <!-- Kiểm tra người bình luận có URL. -->
+
+                                        <a
+                                          expr:href="data:comment.authorUrl"
+                                          rel="nofollow"
+                                        >
+                                          <!-- Liên kết hồ sơ bình luận an toàn. -->
+
+                                          <data:comment.author />
+                                          <!-- Tên người bình luận. -->
+                                        </a>
+                                        <!-- Kết thúc liên kết tác giả. -->
+
+                                        <b:else />
+                                        <!-- Trường hợp không có URL tác giả. -->
+
+                                        <data:comment.author />
+                                        <!-- Hiển thị tên tác giả. -->
+                                      </b:if>
+                                      <!-- Kết thúc kiểm tra tác giả. -->
+                                    </dt>
+                                    <!-- Kết thúc tên tác giả. -->
+
+                                    <dd class="comment-body">
+                                      <!-- Nội dung bình luận. -->
+
+                                      <p><data:comment.body /></p>
+                                      <!-- Hiển thị nội dung bình luận. -->
+                                    </dd>
+                                    <!-- Kết thúc nội dung bình luận. -->
+                                  </b:loop>
+                                  <!-- Kết thúc vòng lặp bình luận. -->
+                                </dl>
+                                <!-- Kết thúc danh sách bình luận. -->
+                              </div>
+                              <!-- Kết thúc nội dung bình luận. -->
+
+                              <p class="comment-footer">
+                                <!-- Bắt đầu khu vực gửi bình luận. -->
+
+                                <b:if cond="data:post.embedCommentForm">
+                                  <!-- Kiểm tra Blogger có thể nhúng biểu mẫu bình luận. -->
+
+                                  <b:if cond="data:post.allowNewComments">
+                                    <!-- Kiểm tra bình luận mới được phép. -->
+
+                                    <b:include
+                                      data="post"
+                                      name="comment-form"
+                                    />
+                                    <!-- Gọi biểu mẫu bình luận. -->
+
+                                    <b:else />
+                                    <!-- Trường hợp không nhận bình luận mới. -->
+
+                                    <data:post.noNewCommentsText />
+                                    <!-- Hiển thị thông báo đóng bình luận. -->
+                                  </b:if>
+                                  <!-- Kết thúc kiểm tra bình luận mới. -->
+                                </b:if>
+                                <!-- Kết thúc kiểm tra form. -->
+                              </p>
+                              <!-- Kết thúc khu vực gửi bình luận. -->
+                            </b:if>
+                            <!-- Kết thúc điều kiện bình luận. -->
+                          </div>
+                          <!-- Kết thúc comments. -->
+                        </b:includable>
+                        <b:includable id="feedLinks">
+                          <b:if cond='data:blog.pageType != "item"'>
+                            <!-- Blog feed links -->
+                            <b:if cond="data:feedLinks">
+                              <div class="blog-feeds">
+                                <b:include
+                                  data="feedLinks"
+                                  name="feedLinksBody"
+                                />
+                              </div>
+                            </b:if>
+
+                            <b:else />
+                            <!--Post feed links -->
+                            <div class="post-feeds">
+                              <b:loop values="data:posts" var="post">
+                                <b:include
+                                  cond="data:post.allowComments and data:post.feedLinks"
+                                  data="post.feedLinks"
+                                  name="feedLinksBody"
+                                />
+                              </b:loop>
+                            </div>
+                          </b:if>
+                        </b:includable>
+                        <b:includable id="feedLinksBody" var="links">
+                          <div class="feed-links">
+                            <data:feedLinksMsg />
+                            <b:loop values="data:links" var="f">
+                              <a
+                                class="feed-link"
+                                expr:href="data:f.url"
+                                expr:type="data:f.mimeType"
+                                target="_blank"
+                                ><data:f.name /> (<data:f.feedType />)</a
+                              >
+                            </b:loop>
+                          </div>
+                        </b:includable>
+                        <b:includable id="iframe_comments" var="post">
+                          <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+                        </b:includable>
+                        <b:includable id="mobile-index-post" var="post">
+                          <div class="mobile-date-outer date-outer">
+                            <b:if cond="data:post.dateHeader">
+                              <div class="date-header">
+                                <span><data:post.dateHeader /></span>
+                              </div>
+                            </b:if>
+
+                            <div class="mobile-post-outer">
+                              <a expr:href="data:post.url">
+                                <h3
+                                  class="mobile-index-title entry-title"
+                                  itemprop="name"
+                                >
+                                  <data:post.title />
+                                </h3>
+
+                                <div class="mobile-index-arrow">
+                                  &amp;rsaquo;
+                                </div>
+
+                                <div class="mobile-index-contents">
+                                  <b:if cond="data:post.thumbnailUrl">
+                                    <div class="mobile-index-thumbnail">
+                                      <div class="Image">
+                                        <img
+                                          expr:src="data:post.thumbnailUrl"
+                                        />
+                                      </div>
+                                    </div>
+                                  </b:if>
+
+                                  <div class="post-body">
+                                    <b:if cond="data:post.snippet"
+                                      ><data:post.snippet
+                                    /></b:if>
+                                  </div>
+                                </div>
+
+                                <div style="clear: both" />
+                              </a>
+
+                              <div class="mobile-index-comment">
+                                <b:include
+                                  cond='data:blog.pageType != "static_page"                          and data:post.allowComments                          and data:post.numComments != 0'
+                                  data="post"
+                                  name="comment_count_picker"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </b:includable>
+                        <b:includable id="mobile-main" var="top">
+                          <!-- Bắt đầu giao diện mobile Blogger. -->
+
+                          <div class="blog-posts hfeed">
+                            <!-- Container bài viết mobile. -->
+
+                            <b:include data="top" name="status-message" />
+                            <!-- Hiển thị thông báo Blogger. -->
+
+                            <b:loop values="data:posts" var="post">
+                              <!-- Lặp bài viết mobile. -->
+
+                              <b:include data="post" name="mobile-post" />
+                              <!-- Gọi bài viết mobile. -->
+                            </b:loop>
+                            <!-- Kết thúc vòng lặp mobile. -->
+                          </div>
+                          <!-- Kết thúc danh sách mobile. -->
+
+                          <b:include name="mobile-nextprev" />
+                          <!-- Gọi phân trang mobile. -->
+                        </b:includable>
+                        <b:includable id="mobile-nextprev">
+                          <!-- Bắt đầu phân trang mobile. -->
+
+                          <div class="blog-pager" id="blog-pager">
+                            <!-- Container phân trang mobile. -->
+
+                            <b:if cond="data:newerPageUrl">
+                              <!-- Kiểm tra trang mới hơn. -->
+
+                              <a
+                                class="blog-pager-newer-link"
+                                expr:href="data:newerPageUrl"
+                                expr:title="data:newerPageTitle"
+                              >
+                                <!-- Liên kết trang mới hơn. -->
+
+                                <data:newerPageTitle />
+                                <!-- Tiêu đề trang mới hơn. -->
+                              </a>
+                              <!-- Kết thúc liên kết. -->
+                            </b:if>
+                            <!-- Kết thúc kiểm tra trang mới hơn. -->
+
+                            <b:if cond="data:olderPageUrl">
+                              <!-- Kiểm tra trang cũ hơn. -->
+
+                              <a
+                                class="blog-pager-older-link"
+                                expr:href="data:olderPageUrl"
+                                expr:title="data:olderPageTitle"
+                              >
+                                <!-- Liên kết trang cũ hơn. -->
+
+                                <data:olderPageTitle />
+                                <!-- Tiêu đề trang cũ hơn. -->
+                              </a>
+                              <!-- Kết thúc liên kết. -->
+                            </b:if>
+                            <!-- Kết thúc kiểm tra trang cũ hơn. -->
+                          </div>
+                          <!-- Kết thúc phân trang mobile. -->
+                        </b:includable>
+                        <b:includable id="mobile-post" var="post">
+                          <!-- Bắt đầu bài viết mobile. -->
+
+                          <article
+                            class="post hentry uncustomized-post-template"
+                            itemscope="itemscope"
+                            itemtype="https://schema.org/BlogPosting"
+                          >
+                            <!-- Semantic BlogPosting mobile. -->
+
+                            <b:if cond="data:post.title">
+                              <!-- Kiểm tra tiêu đề. -->
+
+                              <h3
+                                class="post-title entry-title"
+                                itemprop="headline"
+                              >
+                                <!-- Tiêu đề bài mobile. -->
+
+                                <a expr:href="data:post.url">
+                                  <!-- Liên kết bài viết. -->
+
+                                  <data:post.title />
+                                  <!-- Hiển thị tiêu đề. -->
+                                </a>
+                                <!-- Kết thúc liên kết. -->
+                              </h3>
+                              <!-- Kết thúc tiêu đề. -->
+                            </b:if>
+                            <!-- Kết thúc điều kiện tiêu đề. -->
+
+                            <div
+                              class="post-body entry-content"
+                              expr:id='"post-body-" + data:post.id'
+                              itemprop="articleBody"
+                            >
+                              <!-- Nội dung bài mobile. -->
+
+                              <data:post.body />
+                              <!-- Xuất nội dung bài viết. -->
+                            </div>
+                            <!-- Kết thúc nội dung. -->
+
+                            <div class="post-footer">
+                              <!-- Footer mobile. -->
+
+                              <span class="post-timestamp">
+                                <!-- Thời gian mobile. -->
+
+                                <time
+                                  class="published"
+                                  expr:datetime="data:post.timestampISO8601"
+                                  itemprop="datePublished"
+                                >
+                                  <!-- Dữ liệu thời gian semantic. -->
+
+                                  <data:post.timestamp />
+                                  <!-- Hiển thị thời gian. -->
+                                </time>
+                                <!-- Kết thúc time. -->
+                              </span>
+                              <!-- Kết thúc timestamp. -->
+                            </div>
+                            <!-- Kết thúc footer. -->
+                          </article>
+                          <!-- Kết thúc bài mobile. -->
+
+                          <b:include
+                            cond='data:blog.pageType in {"static_page","item"}'
+                            data="post"
+                            name="comment_picker"
+                          />
+                          <!-- Giữ bình luận mobile. -->
+                        </b:includable>
+                        <b:includable id="nextprev">
+                          <!-- Bắt đầu phân trang Blogger. -->
+
+                          <div class="blog-pager" id="blog-pager">
+                            <!-- Container phân trang. -->
+
+                            <b:if cond="data:newerPageUrl">
+                              <!-- Kiểm tra có bài mới hơn hay không. -->
+
+                              <span id="blog-pager-newer-link">
+                                <!-- Container liên kết bài mới hơn. -->
+
+                                <a
+                                  class="blog-pager-newer-link"
+                                  expr:href="data:newerPageUrl"
+                                  expr:title="data:newerPageTitle"
+                                >
+                                  <!-- Liên kết đến trang mới hơn. -->
+
+                                  <data:newerPageTitle />
+                                  <!-- Hiển thị tiêu đề điều hướng. -->
+                                </a>
+                                <!-- Kết thúc liên kết mới hơn. -->
+                              </span>
+                              <!-- Kết thúc container mới hơn. -->
+                            </b:if>
+                            <!-- Kết thúc kiểm tra bài mới hơn. -->
+
+                            <b:if cond="data:olderPageUrl">
+                              <!-- Kiểm tra có bài cũ hơn hay không. -->
+
+                              <span id="blog-pager-older-link">
+                                <!-- Container liên kết bài cũ hơn. -->
+
+                                <a
+                                  class="blog-pager-older-link"
+                                  expr:href="data:olderPageUrl"
+                                  expr:title="data:olderPageTitle"
+                                >
+                                  <!-- Liên kết đến trang cũ hơn. -->
+
+                                  <data:olderPageTitle />
+                                  <!-- Hiển thị tiêu đề điều hướng. -->
+                                </a>
+                                <!-- Kết thúc liên kết cũ hơn. -->
+                              </span>
+                              <!-- Kết thúc container cũ hơn. -->
+                            </b:if>
+                            <!-- Kết thúc kiểm tra bài cũ hơn. -->
+                          </div>
+                          <!-- Kết thúc phân trang. -->
+                        </b:includable>
+                        <b:includable id="post" var="post">
+                          <!-- Bắt đầu template bài viết desktop. -->
+
+                          <article
+                            class="post hentry uncustomized-post-template"
+                            itemprop="blogPost"
+                            itemscope="itemscope"
+                            itemtype="https://schema.org/BlogPosting"
+                          >
+                            <!-- Sử dụng semantic article và BlogPosting schema. -->
+
+                            <meta
+                              expr:content="data:blog.blogId"
+                              itemprop="blogId"
+                            />
+                            <!-- Cung cấp Blog ID cho Blogger schema. -->
+
+                            <meta
+                              expr:content="data:post.id"
+                              itemprop="postId"
+                            />
+                            <!-- Cung cấp Post ID cho Blogger schema. -->
+
+                            <b:if cond="data:post.firstImageUrl">
+                              <!-- Kiểm tra ảnh đầu tiên của bài viết. -->
+
+                              <meta
+                                expr:content="data:post.firstImageUrl"
+                                itemprop="image"
+                              />
+                              <!-- Cung cấp ảnh đại diện cho schema bài viết. -->
+                            </b:if>
+                            <!-- Kết thúc kiểm tra ảnh. -->
+
+                            <b:if cond="data:post.title">
+                              <!-- Kiểm tra bài viết có tiêu đề. -->
+
+                              <h3
+                                class="post-title entry-title"
+                                itemprop="headline"
+                              >
+                                <!-- Dùng headline cho tiêu đề bài viết. -->
+
+                                <b:if
+                                  cond="data:post.link or (data:post.url and data:blog.url != data:post.url)"
+                                >
+                                  <!-- Kiểm tra URL bài viết. -->
+
+                                  <a
+                                    expr:href="data:post.link ? data:post.link : data:post.url"
+                                  >
+                                    <!-- Tạo liên kết bài viết. -->
+
+                                    <data:post.title />
+                                    <!-- Hiển thị tiêu đề. -->
+                                  </a>
+                                  <!-- Kết thúc liên kết. -->
+
+                                  <b:else />
+                                  <!-- Trường hợp bài viết hiện tại không cần liên kết. -->
+
+                                  <data:post.title />
+                                  <!-- Hiển thị tiêu đề thuần văn bản. -->
+                                </b:if>
+                                <!-- Kết thúc điều kiện URL. -->
+                              </h3>
+                              <!-- Kết thúc tiêu đề bài viết. -->
+                            </b:if>
+                            <!-- Kết thúc điều kiện tiêu đề. -->
+
+                            <div
+                              class="post-body entry-content"
+                              expr:id='"post-body-" + data:post.id'
+                              expr:itemprop='(data:blog.metaDescription ? "articleBody" : "description articleBody")'
+                            >
+                              <!-- Hiển thị nội dung bài viết và dữ liệu semantic. -->
+
+                              <data:post.body />
+                              <!-- Xuất toàn bộ nội dung bài viết từ Blogger. -->
+
+                              <div style="clear: both" />
+                              <!-- Xóa ảnh hưởng của float trong nội dung. -->
+                            </div>
+                            <!-- Kết thúc nội dung bài viết. -->
+
+                            <b:if cond="data:post.hasJumpLink">
+                              <!-- Kiểm tra bài viết có dấu ngắt đọc thêm. -->
+
+                              <div class="jump-link">
+                                <!-- Container đọc thêm. -->
+
+                                <a
+                                  expr:href='data:post.url + "#more"'
+                                  expr:title="data:post.title"
+                                >
+                                  <!-- Liên kết đến toàn bộ bài viết. -->
+
+                                  <data:post.jumpText />
+                                  <!-- Hiển thị chữ đọc thêm của Blogger. -->
+                                </a>
+                                <!-- Kết thúc liên kết đọc thêm. -->
+                              </div>
+                              <!-- Kết thúc đọc thêm. -->
+                            </b:if>
+                            <!-- Kết thúc điều kiện đọc thêm. -->
+
+                            <div class="post-footer">
+                              <!-- Bắt đầu thông tin cuối bài. -->
+
+                              <div class="post-footer-line post-footer-line-1">
+                                <!-- Dòng thông tin đầu tiên. -->
+
+                                <span class="post-timestamp">
+                                  <!-- Bắt đầu thời gian bài viết. -->
+
+                                  <b:if cond="data:top.showTimestamp">
+                                    <!-- Kiểm tra cấu hình hiển thị thời gian. -->
+
+                                    <b:if cond="data:post.url">
+                                      <!-- Kiểm tra URL bài viết. -->
+
+                                      <meta
+                                        expr:content="data:post.url.canonical"
+                                        itemprop="url"
+                                      />
+                                      <!-- Khai báo URL canonical trong schema. -->
+
+                                      <time
+                                        class="published"
+                                        expr:datetime="data:post.timestampISO8601"
+                                        itemprop="datePublished"
+                                      >
+                                        <!-- Khai báo thời gian xuất bản semantic. -->
+
+                                        <a
+                                          class="timestamp-link"
+                                          expr:href="data:post.url"
+                                          rel="bookmark"
+                                        >
+                                          <!-- Liên kết cố định của bài viết. -->
+
+                                          <data:post.timestamp />
+                                          <!-- Hiển thị thời gian bài viết. -->
+                                        </a>
+                                        <!-- Kết thúc liên kết thời gian. -->
+                                      </time>
+                                      <!-- Kết thúc time semantic. -->
+                                    </b:if>
+                                    <!-- Kết thúc kiểm tra URL. -->
+                                  </b:if>
+                                  <!-- Kết thúc kiểm tra thời gian. -->
+                                </span>
+                                <!-- Kết thúc thời gian. -->
+
+                                <span class="post-comment-link">
+                                  <!-- Bắt đầu số bình luận. -->
+
+                                  <b:include
+                                    cond='data:blog.pageType not in {"item","static_page"} and data:post.allowComments'
+                                    data="post"
+                                    name="comment_count_picker"
+                                  />
+                                  <!-- Hiển thị liên kết bình luận trên danh sách bài. -->
+                                </span>
+                                <!-- Kết thúc số bình luận. -->
+                              </div>
+                              <!-- Kết thúc dòng thông tin thứ nhất. -->
+
+                              <div class="post-footer-line post-footer-line-2">
+                                <!-- Bắt đầu dòng nhãn. -->
+
+                                <span class="post-labels">
+                                  <!-- Container nhãn. -->
+
+                                  <b:if
+                                    cond="data:top.showPostLabels and data:post.labels"
+                                  >
+                                    <!-- Kiểm tra có nhãn hay không. -->
+
+                                    <data:postLabelsLabel />
+                                    <!-- Hiển thị tên trường nhãn. -->
+
+                                    <b:loop
+                                      values="data:post.labels"
+                                      var="label"
+                                    >
+                                      <!-- Lặp qua các nhãn bài viết. -->
+
+                                      <a expr:href="data:label.url" rel="tag">
+                                        <!-- Liên kết semantic đến nhãn. -->
+
+                                        <data:label.name />
+                                        <!-- Hiển thị tên nhãn. -->
+                                      </a>
+                                      <!-- Kết thúc nhãn. -->
+                                    </b:loop>
+                                    <!-- Kết thúc vòng lặp nhãn. -->
+                                  </b:if>
+                                  <!-- Kết thúc kiểm tra nhãn. -->
+                                </span>
+                                <!-- Kết thúc nhãn. -->
+                              </div>
+                              <!-- Kết thúc dòng nhãn. -->
+
+                              <div class="post-footer-line post-footer-line-3">
+                                <!-- Bắt đầu dòng vị trí. -->
+
+                                <span class="post-location">
+                                  <!-- Container vị trí. -->
+
+                                  <b:if
+                                    cond="data:top.showLocation and data:post.location"
+                                  >
+                                    <!-- Kiểm tra vị trí bài viết. -->
+
+                                    <data:postLocationLabel />
+                                    <!-- Hiển thị nhãn vị trí. -->
+
+                                    <a
+                                      expr:href="data:post.location.mapsUrl"
+                                      rel="noopener nofollow"
+                                      target="_blank"
+                                    >
+                                      <!-- Liên kết bản đồ với thuộc tính an toàn. -->
+
+                                      <data:post.location.name />
+                                      <!-- Hiển thị tên vị trí. -->
+                                    </a>
+                                    <!-- Kết thúc liên kết vị trí. -->
+                                  </b:if>
+                                  <!-- Kết thúc điều kiện vị trí. -->
+                                </span>
+                                <!-- Kết thúc vị trí. -->
+                              </div>
+                              <!-- Kết thúc dòng vị trí. -->
+                            </div>
+                            <!-- Kết thúc footer bài viết. -->
+                          </article>
+                          <!-- Kết thúc bài viết semantic. -->
+                        </b:includable>
+                        <b:includable id="postQuickEdit" var="post">
+                          <b:if cond="data:post.editUrl">
+                            <span
+                              expr:class='"item-control " + data:post.adminClass'
+                            >
+                              <a
+                                expr:href="data:post.editUrl"
+                                expr:title="data:top.editPostMsg"
+                              >
+                                <img
+                                  alt=""
+                                  class="icon-action"
+                                  height="18"
+                                  src="https://resources.blogblog.com/img/icon18_edit_allbkg.gif"
+                                  width="18"
+                                />
+                              </a>
+                            </span>
+                          </b:if>
+                        </b:includable>
+                        <b:includable id="shareButtons" var="post">
+                          <b:if cond="data:top.showEmailButton"
+                            ><a
+                              class="goog-inline-block share-button sb-email"
+                              expr:href='data:post.sharePostUrl + "&amp;target=email"'
+                              expr:title="data:top.emailThisMsg"
+                              target="_blank"
+                              ><span class="share-button-link-text"
+                                ><data:top.emailThisMsg /></span></a></b:if
+                          ><b:if cond="data:top.showBlogThisButton"
+                            ><a
+                              class="goog-inline-block share-button sb-blog"
+                              expr:href='data:post.sharePostUrl + "&amp;target=blog"'
+                              expr:onclick='"window.open(this.href, \"_blank\", \"height=270,width=475\"); return false;"'
+                              expr:title="data:top.blogThisMsg"
+                              target="_blank"
+                              ><span class="share-button-link-text"
+                                ><data:top.blogThisMsg /></span></a></b:if
+                          ><b:if cond="data:top.showTwitterButton"
+                            ><a
+                              class="goog-inline-block share-button sb-twitter"
+                              expr:href='data:post.sharePostUrl + "&amp;target=twitter"'
+                              expr:title="data:top.shareToTwitterMsg"
+                              target="_blank"
+                              ><span class="share-button-link-text"
+                                ><data:top.shareToTwitterMsg /></span></a></b:if
+                          ><b:if cond="data:top.showFacebookButton"
+                            ><a
+                              class="goog-inline-block share-button sb-facebook"
+                              expr:href='data:post.sharePostUrl + "&amp;target=facebook"'
+                              expr:onclick='"window.open(this.href, \"_blank\", \"height=430,width=640\"); return false;"'
+                              expr:title="data:top.shareToFacebookMsg"
+                              target="_blank"
+                              ><span class="share-button-link-text"
+                                ><data:top.shareToFacebookMsg /></span></a></b:if
+                          ><b:if cond="data:top.showPinterestButton"
+                            ><a
+                              class="goog-inline-block share-button sb-pinterest"
+                              expr:href='data:post.sharePostUrl + "&amp;target=pinterest"'
+                              expr:title="data:top.shareToPinterestMsg"
+                              target="_blank"
+                              ><span class="share-button-link-text"
+                                ><data:top.shareToPinterestMsg /></span></a
+                          ></b:if>
+                        </b:includable>
+                        <b:includable id="status-message">
+                          <!-- Bắt đầu thông báo Blogger. -->
+
+                          <b:if cond="data:navMessage">
+                            <!-- Kiểm tra có thông báo điều hướng hay không. -->
+
+                            <div class="status-msg-wrap">
+                              <!-- Container thông báo. -->
+
+                              <div class="status-msg-body">
+                                <!-- Nội dung thông báo. -->
+
+                                <data:navMessage />
+                                <!-- Hiển thị thông báo Blogger. -->
+                              </div>
+                              <!-- Kết thúc nội dung thông báo. -->
+                            </div>
+                            <!-- Kết thúc container thông báo. -->
+                          </b:if>
+                          <!-- Kết thúc điều kiện thông báo. -->
+                        </b:includable>
+                        <b:includable id="threaded-comment-form" var="post">
+                          <!-- Bắt đầu form bình luận luồng. -->
+
+                          <div class="comment-form">
+                            <!-- Container form. -->
+
+                            <a name="comment-form" />
+                            <!-- Neo form. -->
+
+                            <p><data:blogCommentMessage /></p>
+                            <!-- Thông báo bình luận. -->
+
+                            <a
+                              expr:href="data:post.commentFormIframeSrc"
+                              id="comment-editor-src"
+                            />
+                            <!-- Nguồn iframe bình luận. -->
+
+                            <iframe
+                              allowtransparency="true"
+                              class="blogger-iframe-colorize blogger-comment-from-post"
+                              expr:height="data:cmtIframeInitialHeight"
+                              frameborder="0"
+                              id="comment-editor"
+                              name="comment-editor"
+                              src=""
+                              width="100%"
+                            />
+                            <!-- Iframe bình luận Blogger. -->
+
+                            <data:post.cmtfpIframe />
+                            <!-- Dữ liệu iframe Blogger. -->
+
+                            <script type="text/javascript">
+                              BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+                            </script>
+                            <!-- Khởi tạo iframe bình luận. -->
+                          </div>
+                          <!-- Kết thúc form. -->
+                        </b:includable>
+                        <b:includable id="threaded_comment_js" var="post">
+                          <!-- Bắt đầu JavaScript bình luận luồng. -->
+
+                          <script
+                            async="async"
+                            expr:src="data:post.commentSrc"
+                            type="text/javascript"
+                          />
+                          <!-- Tải JavaScript bình luận của Blogger theo cơ chế bất đồng bộ. -->
+
+                          <script type="text/javascript">
+                            //<![CDATA[
+                            (function(){
+                              var commentItems=<data:post.commentJso/>;
+                              var commentMessages=<data:post.commentMsgs/>;
+                              var commentConfiguration=<data:post.commentConfig/>;
+                              var commentCursor=null;
+                              if(commentItems&&commentItems.length>0){
+                                commentCursor=parseInt(commentItems[commentItems.length-1].timestamp)+1;
+                              }
+                              var parseComments=function(data){
+                                commentCursor=null;
+                                var comments=[];
+                                if(data&&data.feed&&data.feed.entry){
+                                  for(var index=0;index<data.feed.entry.length;index++){
+                                    var entry=data.feed.entry[index];
+                                    var comment={};
+                                    var identifier=/blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+                                    comment.id=identifier?identifier[2]:null;
+                                    comment.body=(entry.content&&entry.content.$t)||(entry.summary&&entry.summary.$t)||'';
+                                    comment.timestamp=Date.parse(entry.published.$t)+'';
+                                    if(entry.author&&entry.author[0]){
+                                      var author=entry.author[0];
+                                      comment.author={
+                                        name:author.name?author.name.$t:'',
+                                        profileUrl:author.uri?author.uri.$t:'',
+                                        avatarUrl:author.gd$image?author.gd$image.src:''
+                                      };
+                                    }
+                                    comments.push(comment);
+                                  }
+                                }
+                                return comments;
+                              };
+                              var loadMoreComments=function(callback){
+                                if(commentCursor){
+                                  var feedUrl=commentConfiguration.feed+'?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+                                  feedUrl+='&published-min='+new Date(commentCursor).toISOString();
+                                  window.bloggercomments=function(data){
+                                    var parsedComments=parseComments(data);
+                                    commentCursor=parsedComments.length<50?null:parseInt(parsedComments[parsedComments.length-1].timestamp)+1;
+                                    callback(parsedComments);
+                                    window.bloggercomments=null;
+                                  };
+                                  feedUrl+='&callback=bloggercomments';
+                                  var scriptElement=document.createElement('script');
+                                  scriptElement.async=true;
+                                  scriptElement.src=feedUrl;
+                                  document.getElementsByTagName('head')[0].appendChild(scriptElement);
+                                }
+                              };
+                              var hasMoreComments=function(){
+                                return !!commentCursor;
+                              };
+                              var renderComments=function(){
+                                if(window.goog&&window.goog.comments){
+                                  var commentHolder=document.getElementById('comment-holder');
+                                  window.goog.comments.render(commentHolder,{
+                                    id:commentConfiguration.postId,
+                                    data:commentItems,
+                                    loadNext:loadMoreComments,
+                                    hasMore:hasMoreComments,
+                                    rendered:true,
+                                    config:{maxDepth:commentConfiguration.maxThreadDepth},
+                                    messages:commentMessages
+                                  });
+                                }
+                              };
+                              if(window.goog&&window.goog.comments){
+                                renderComments();
+                              }else{
+                                window.goog=window.goog||{};
+                                window.goog.comments=window.goog.comments||{};
+                                window.goog.comments.loadQueue=window.goog.comments.loadQueue||[];
+                                window.goog.comments.loadQueue.push(renderComments);
+                              }
+                            })();
+                            //]]>
+                          </script>
+                          <!-- Giữ hệ thống bình luận luồng tương thích với Blogger. -->
+                        </b:includable>
+                        <b:includable id="threaded_comments" var="post">
+                          <!-- Bắt đầu bình luận dạng luồng. -->
+
+                          <div class="comments" id="comments">
+                            <!-- Container bình luận luồng. -->
+
+                            <a name="comments" />
+                            <!-- Neo bình luận. -->
+
+                            <h4><data:post.commentLabelFull /></h4>
+                            <!-- Tiêu đề bình luận. -->
+
+                            <div class="comments-content">
+                              <!-- Nội dung bình luận. -->
+
+                              <b:include
+                                cond="data:post.embedCommentForm"
+                                data="post"
+                                name="threaded_comment_js"
+                              />
+                              <!-- Gọi JavaScript bình luận luồng của Blogger. -->
+
+                              <div id="comment-holder">
+                                <!-- Container để Blogger render bình luận. -->
+
+                                <data:post.commentHtml />
+                                <!-- Xuất HTML bình luận từ Blogger. -->
+                              </div>
+                              <!-- Kết thúc comment holder. -->
+                            </div>
+                            <!-- Kết thúc comments content. -->
+
+                            <p class="comment-footer">
+                              <!-- Khu vực gửi bình luận. -->
+
+                              <b:if cond="data:post.allowNewComments">
+                                <!-- Kiểm tra bình luận mới. -->
+
+                                <b:include
+                                  data="post"
+                                  name="threaded-comment-form"
+                                />
+                                <!-- Gọi form bình luận luồng. -->
+
+                                <b:else />
+                                <!-- Trường hợp đóng bình luận. -->
+
+                                <data:post.noNewCommentsText />
+                                <!-- Hiển thị thông báo đóng bình luận. -->
+                              </b:if>
+                              <!-- Kết thúc điều kiện bình luận mới. -->
+                            </p>
+                            <!-- Kết thúc footer bình luận. -->
+                          </div>
+                          <!-- Kết thúc threaded comments. -->
+                        </b:includable>
+                      </b:widget>
+                    </b:section>
+                    <!-- Kết thúc Main section. -->
+                  </div>
+                  <!-- Kết thúc center inner. -->
+                </div>
+                <!-- Kết thúc center outer. -->
+              </div>
+              <!-- Kết thúc columns. -->
+            </div>
+            <!-- Kết thúc Main container. -->
+          </main>
+          <!-- Kết thúc khu vực Blog. -->
+
+          <footer>
+            <!-- Bắt đầu Footer. -->
+
+            <div
+              class="tb-section"
+              style="padding-top: 0; padding-bottom: 10px"
+            >
+              <!-- Dòng giới thiệu footer. -->
+
+              <p style="margin: 0; color: #b9c9d8">
+                <!-- Nội dung giới thiệu footer. -->
+
+                Tư vấn vé máy bay trong nước và quốc tế &#8226; Hỗ trợ hành
+                trình &#8226; Đổi vé &#8226; Hoàn vé
+                <!-- Nội dung footer. -->
+              </p>
+              <!-- Kết thúc đoạn footer. -->
+            </div>
+            <!-- Kết thúc dòng giới thiệu. -->
+
+            <div class="footer-outer">
+              <!-- Khung Footer Blogger. -->
+
+              <div class="region-inner footer-inner">
+                <!-- Container Footer. -->
+
+                <b:section
+                  class="foot"
+                  id="footer-3"
+                  name="Footer"
+                  showaddelement="yes"
+                >
+                  <b:widget
+                    id="Attribution1"
+                    locked="true"
+                    title=""
+                    type="Attribution"
+                    version="1"
+                  >
+                    <b:widget-settings>
+                      <b:widget-setting name="copyright" />
+                    </b:widget-settings>
+                    <b:includable id="main">
+                      <!-- Bắt đầu Attribution. -->
+
+                      <div class="widget-content" style="text-align: center">
+                        <!-- Căn giữa Attribution. -->
+
+                        <b:if cond='data:attribution != ""'>
+                          <!-- Kiểm tra dữ liệu Attribution. -->
+
+                          <data:attribution />
+                          <!-- Xuất Attribution của Blogger. -->
+                        </b:if>
+                        <!-- Kết thúc điều kiện Attribution. -->
+                      </div>
+                      <!-- Kết thúc Attribution content. -->
+                    </b:includable>
+                  </b:widget>
+                </b:section>
+                <!-- Kết thúc Footer section. -->
+              </div>
+              <!-- Kết thúc Footer container. -->
+            </div>
+            <!-- Kết thúc Footer outer. -->
+          </footer>
+          <!-- Kết thúc Footer. -->
+        </div>
+        <!-- Kết thúc content-inner. -->
+      </div>
+      <!-- Kết thúc content-outer. -->
+    </div>
+    <!-- Kết thúc content. -->
+
+    <script type="text/javascript">
+      // <![CDATA[
+      (function () {
+        var currentBody = document.body;
+        if (currentBody) {
+          currentBody.className = currentBody.className.replace("loading", "");
+        }
+      })();
+      // ]]>
+    </script>
+    <!-- Xóa trạng thái loading mà không cần thư viện JavaScript bên ngoài. -->
+  </body>
+  <!-- Kết thúc body. -->
+</html>
+<!-- Kết thúc tài liệu HTML. -->
